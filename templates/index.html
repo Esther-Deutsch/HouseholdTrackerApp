@@ -1,0 +1,26 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="static/css/index.css"></link>
+    <title>HouseholdTracker</title>
+
+    {% block head %}
+    {% endblock %}
+
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/register">הרשם</a></li>
+            <li><a href="/login">התחבר</a></li>
+            <li><a href="/profile">איזור אישי</a></li>
+            <li><a href="/logout">התנתק</a></li>
+        </ul>
+    </nav>
+    
+    {% block body %}
+    {% endblock  %}
+</body>
+</html>

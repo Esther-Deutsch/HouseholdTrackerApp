@@ -1,0 +1,25 @@
+
+{% extends 'index.html' %}
+
+    {% block head %}
+      <link rel="stylesheet" href="static/css/register-login.css"></link>
+      <title>register</title>
+    {% endblock %}
+
+    
+
+    {% block body %}
+      <div class="container">
+        <form action="/register" method="post">
+          <lable>שם</lable>
+          <input type="text" name="name" value="{{name}}"/>
+          <lable>מייל</lable>
+          <input type="email" name="email" value="{{email}}"/>
+          <lable>סיסמא</lable>
+          <input type="password" name="password" value="{{password}}"/>
+          <button type="submit">הרשם</button>
+          <h3>{{message}}</h3>
+
+        </form>
+      </div>
+    {% endblock %}

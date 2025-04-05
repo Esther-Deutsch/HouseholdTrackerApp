@@ -1,0 +1,64 @@
+{% extends 'index.html' %}
+
+    {% block head %}
+      <link rel="stylesheet" href="static/css/profile.css"></link>
+      <title>profile</title>
+    {% endblock %}
+
+    
+
+    {% block body %}
+
+        <div class="all_container">
+
+            <a href="/profile">הצג את כל האירועים שלי</a>
+            <a href="/profileWeek">הצג אירועים משבוע האחרון</a>
+
+            {% if purchases|length < 1 %}
+                    <h4>אין לך עדיין קניות ברשימה, צור רשימה</h4>
+            {% else %}
+            <h4>קיימות {{purchases|length}} קניות ברשימת הקניות שלך</h4>
+            <div class="table">
+                <table>
+                    <tr class="head">
+                        <th>שם המוצר</th>
+                        <th>כמות</th>
+                        <th>מחיר</th>
+                        <th>קטגוריה</th>
+                        <th>תאריך</th>
+                        <th>מחק</th>
+                    </tr>
+               {% for p in purchases: %}
+                    <tr class="row">
+                        <th>{{ p.name}}</th>
+                        <th>{{ p.qty }}</th>
+                        <th>{{ p.price }}</th>
+                        <th>{{ p.category }}</th>
+                        <th>{{ p.date.date() }}</th>
+                        <th><a href="/delete/{{p.id}}">X</a></th>
+                    </tr>
+              {% endfor %}
+                </table>
+            </div>
+        </div>
+            {% endif %}
+            <a href="#addModal" class="open-modal">הוסף</a>
+        
+
+        
+        
+        <div id="addModal" class="modal">
+            <div class="modal-content">
+                <a href="#" class="close">&times;</a>
+                <form action="/add" method="post">
+                    <input type="text" name="name" placeholder="שם המוצר" />
+                    <input type="number" name="qty" placeholder="כמות" />
+                    <input type="number" name="price" placeholder="מחיר" step="0.01"/>
+                    <input type="text" name="category" placeholder="קטגוריה" />
+                    <input type="date" name="date"  placeholder="תאריך" />
+                    <button>הוסף קניה</button>
+                </form>
+            </div>
+        </div>
+
+    {% endblock %}

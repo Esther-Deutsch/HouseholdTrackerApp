@@ -1,0 +1,51 @@
+/* 
+
+.container{
+    display: flex;
+    flex-direction: column;
+    height: 90vh;
+    align-items: center;
+    justify-content: space-evenly;
+} */
+
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* גובה מלא של העמוד */
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+.container {
+    margin-top: 50px; /* ריווח מהניווט */
+    padding: 50px 20px;
+    max-width: 800px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 59%;
+}
+
+/* עיצוב הכותרת */
+.container h1 {
+    font-size: 36px;
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+.container h3 {
+    font-size: 20px;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+/* עיצוב התמונה */
+.container img {
+    width: 200px; /* גודל התמונה */
+    height: auto; /* שמירה על יחס גובה-רוחב */
+    margin-top: 20px;
+}

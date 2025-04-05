@@ -1,0 +1,93 @@
+/*  */
+*{
+    direction: rtl;
+}
+
+/* עיצוב כללי */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+}
+
+/* עיצוב הניווט */
+/* nav {
+    background-color: #007bff;
+    margin-top: 10px;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: fixed; הניווט נשאר קבוע בראש העמוד
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; מבטיח שהניווט יישאר מעל כל האלמנטים
+} */
+
+/* nav a {
+    color: #ffffff;
+    font-size: 16px;
+    margin: 0;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: #ffdd57;
+} */
+
+/* ==================================== */
+
+
+
+/* עיצוב הניווט */
+nav {
+    background-color: #007bff; /* צבע כהה */
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between; /* ריווח בין האלמנטים */
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: fixed; /* הניווט נשאר קבוע בראש העמוד */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* מבטיח שהניווט יישאר מעל כל האלמנטים */
+}
+
+
+/* עיצוב הקישורים */
+nav ul {
+    width: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    gap: 20px; /* ריווח בין הקישורים */
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: #ffffff;
+    font-size: 16px;
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color:  #343a40;/* רקע כחול */
+    color: #ffffff; /* טקסט לבן */
+}
+
