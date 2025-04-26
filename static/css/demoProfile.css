@@ -1,0 +1,14 @@
+@import url('profile.css');
+
+body::before {
+    content: "דוגמא בלבד"; /* הטקסט של סימון המים */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-30deg); /* סיבוב של הטקסט */
+    font-size: 100px; /* גודל הטקסט */
+    color: rgba(0, 0, 0, 0.5); /* צבע חצי-שקוף */
+    z-index: 0; /* כדי שהטקסט יהיה ברקע */
+    pointer-events: none; /* כדי שלא יפריע ללחיצות */
+    white-space: nowrap; /* כדי שהטקסט לא יישבר */
+}

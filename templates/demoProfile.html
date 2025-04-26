@@ -1,7 +1,7 @@
 {% extends 'index.html' %}
 
     {% block head %}
-      <link rel="stylesheet" href="static/css/profile.css"></link>
+      <link rel="stylesheet" href="static/css/demoProfile.css"></link>
       <title>profile</title>
     {% endblock %}
 
@@ -12,32 +12,28 @@
         <div class="btns">
 
             <div class="filters">
-                <a href="/profile" class="a">הצג את כל האירועים שלי</a>
-                <a href="/profileWeek" class="a">הצג אירועים משבוע האחרון</a>
-                <a href="#dateFormModal" class="a">הצג אירועים לפי תאריכים</a>
+                <a class="a">הצג את כל האירועים שלי</a>
+                <a class="a">הצג אירועים משבוע האחרון</a>
+                <a href="/profileRange" class="a">הצג אירועים לפי תאריכים</a>
             </div>
+
             <div class="info">
                 <a href="/saveData" class="a">גיבוי נתונים ושמירה כקובץ</a>  
                 <a href="/products" class="a">נתונים על מוצרי סופר</a>  
                 <a href="/graph1" class="a">נתונים שנתיים</a> 
                 <a href="/graph2" class="a">נתונים לפי קטגוריה</a> 
             </div>
-            <div class="seperate"></div>
-
-        </div>
-
-        <!-- תיבת בחירת טווח תאריכים -->
-        <div id="dateFormModal" class="modal-date">
-            <div class="modal-content-date">
-                <a href="#" class="close-date">&times;</a>
+            {% if request.path == '/profileRange' %}
+            <div class="date-form">
                 <form action="/profileRange" method="post">
-                    <label>מתאריך</label>
-                    <input type="date" name="from" placeholder="מתאריך" required />
-                    <label>עד תאריך</label>
-                    <input type="date" name="to" placeholder="עד תאריך" required />
+                    <lable>מתאריך</lable>
+                    <input type="date" name="from"  placeholder="מתאריך" required />
+                    <lable>עד תאריך</lable>
+                    <input type="date" name="to"  placeholder="עד תאריך" required />
                     <button type="submit">הצג</button>
                 </form>
             </div>
+            {% endif %}
         </div>
 
         <div class="all_container">
@@ -63,30 +59,16 @@
                             <th>{{ p.price }}</th>
                             <th>{{ p.category }}</th>
                             <th>{{ p.date.date() }}</th>
-                            <th><a href="/delete/{{p.id}}">מחיקה</a></th>
+                            <th>X</a></th>
                         </tr>
                   {% endfor %}
                     </table>
                 </div>
                 {% endif %}
-                <a href="#addModal" class="open-modal">הוסף</a>
+                <p href="#addModal" class="open-modal">הוסף</p>
             </div>
  
         </div>        
         
-        <!-- תיבת הוספת מוצר -->
-        <div id="addModal" class="modal-add">
-            <div class="modal-content-add">
-                <a href="#" class="close-add">&times;</a>
-                <form action="/add" method="post">
-                    <input type="text" name="name" placeholder="שם המוצר" />
-                    <input type="number" name="qty" placeholder="כמות" />
-                    <input type="number" name="price" placeholder="מחיר" step="0.01"/>
-                    <input type="text" name="category" placeholder="קטגוריה" />
-                    <input type="date" name="date"  placeholder="תאריך" />
-                    <button>הוסף קניה</button>
-                </form>
-            </div>
-        </div>
 
     {% endblock %}

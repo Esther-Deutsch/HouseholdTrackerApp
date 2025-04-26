@@ -1,0 +1,90 @@
+
+/* עיצוב כללי לעמוד */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center; /* מרכז אופקית */
+    align-items: center; /* מרכז אנכית */
+    height: 100vh; /* גובה מלא של הדף */
+    width: 100%;
+}
+
+
+/* כותרת */
+.container h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* עיצוב כל המוצרים */
+.all_products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* רשת גמישה */
+    gap: 20px; /* ריווח בין המוצרים */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* צל עדין */
+    max-width: 800px;
+    width: 100%;
+    text-align: center;
+
+    /* גלילה */
+    max-height: 500px; /* גובה מקסימלי */
+    overflow-y: auto; /* גלילה אנכית */
+}
+
+/* עיצוב כל מוצר */
+.product {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* צל עדין */
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* אפקט ריחוף */
+.product:hover {
+    transform: translateY(-5px); /* הרמה קלה */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); /* צל חזק יותר */
+}
+
+/* שם המוצר */
+.product .name {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* מחיר המוצר */
+.product .price {
+    font-size: 16px;
+    color: #555;
+}
+
+/* עיצוב הכפתור "יעל קניות" */
+.container a {
+    display: inline-block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color:#089e8f; /* צבע רקע כחול */
+    color: #fff; /* צבע טקסט לבן */
+    text-decoration: none; /* הסרת קו תחתון */
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px; /* פינות מעוגלות */
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* אנימציה */
+}
+
+/* אפקט ריחוף */
+.container a:hover {
+    background-color: #089e8f; /* צבע כהה יותר */
+    transform: scale(1.05); /* הגדלה קלה */
+}

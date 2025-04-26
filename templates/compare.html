@@ -1,0 +1,34 @@
+{% extends 'index.html' %}
+
+{% block head %}
+<link rel="stylesheet" href="static/css/compare.css" />
+<title>graphs</title>
+{% endblock %} 
+
+{% block body %}
+<h1>השוואת מחירים</h1>
+{% if cheaper_products %}
+<table>
+  <thead>
+    <tr>
+      <th>שם המוצר</th>
+      <th>מחיר ששולם</th>
+      <th>מחיר בחנות</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for product in cheaper_products %}
+    <tr>
+      <td>{{ product.name }}</td>
+      <td>{{ product.user_price }}</td>
+      <td>{{ product.store_price }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% else %}
+<p>לא נמצאו מוצרים זולים יותר בחנות.</p>
+{% endif %} 
+
+<a href="\products">חזור לחנות</a>
+{% endblock %}

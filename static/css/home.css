@@ -33,7 +33,7 @@ body {
 /* עיצוב הכותרת */
 .container h1 {
     font-size: 36px;
-    color: #007bff;
+    color:#089e8f;
     margin-bottom: 10px;
 }
 
@@ -48,4 +48,13 @@ body {
     width: 200px; /* גודל התמונה */
     height: auto; /* שמירה על יחס גובה-רוחב */
     margin-top: 20px;
+}
+
+.demo{
+    padding-top: 50px;
+}
+
+.demo a{
+    color:#089e8f;
+    font-weight: bolder;
 }

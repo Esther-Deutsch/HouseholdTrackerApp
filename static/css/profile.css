@@ -5,13 +5,155 @@ body {
     padding: 0;
     display: flex;
     flex-direction: column;
+    height: 97vh; /* גובה מלא של העמוד */
+}
+
+.btns{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: flex-start;
+    width: 95%;
+    padding: 13px;
+    justify-content: center;
+}
+
+
+.seperate{
+    width: 100%;
+    background-color: #E0F2F1;
+    height: 1px;
+}
+
+/* עיצוב הקישורים */
+.btns .a {
+    
+    display: block;
+    margin-bottom: 10px;
+    text-decoration: none;
+    color:#089e8f;
+    background-color: white;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+    width: 200px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.btns .a:hover {
+    background-color: #f0f0f0;
+}
+
+.filters, .info{
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* גובה מלא של העמוד */
+    width: 100%;
+}
+
+.filters{
+    position: relative; /* מגדיר את הורה הכפתור כנקודת ייחוס */
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 80px;
+}
+
+
+/* עיצוב הטופס */
+.date-form {
+    position: absolute; /* מיקום מוחלט */
+    top: 10%; /* מיקום מתחת לכפתור */
+    left: 0; /* צמוד לשמאל של הכפתור */
+    z-index: 10; /* מבטיח שהטופס יופיע מעל אלמנטים אחרים */
+
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 200px;
+}
+
+.date-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.date-form form a {
+    color: black;
+    text-decoration: none;
+    width: 10%;
+    border-radius: 50%;
+}
+
+.date-form form a:hover {
+    background-color: #ededed;
+    text-decoration: underline;
+}
+
+.date-form label {
+    font-size: 14px;
+    color: #333;
+}
+
+.date-form input[type="date"] {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.date-form button {
+    padding: 10px;
+    background-color: #089e8f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.date-form button:hover {
+    background-color: #089e8f;
 }
 
 /* עיצוב הקונטיינר */
-.all_container {
+.all_container{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    align-items: center;
+    gap: 2rem;
+}
+
+/* עיצוב הכפתור של שמירת הקובץ */
+/* .backup-button, .graphs-button {
+    width: 200px;
+    display: inline-block;
+    padding: 10px;
+    background-color:#089e8f;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.backup-button:hover, .graphs-button:hover {
+    background-color:#089e8f;
+} */
+
+/* עיצוב של טבלת הקניות */
+.purchases_list {
     width: 80%;
     max-width: 800px;
     background-color: #ffffff;
@@ -24,13 +166,21 @@ body {
 /* עיצוב הכותרת */
 h4 {
     color: #333;
+    text-decoration: underline;
     margin-bottom: 20px;
 }
 
 /* עיצוב הטבלה */
+
 .table {
-    margin-top: 20px;
-    overflow-x: auto;
+    margin: 20px auto;
+    width: 90%;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .table table {
@@ -38,49 +188,55 @@ h4 {
     border-collapse: collapse;
 }
 
-.table .head th{
-    background-color: #333;
+.head{
+    /* background-color:  #343a40; */
+    /* color: white; */
+    border-bottom:3px solid #089e8f;
 }
 
 .row th a{
-    color: #ffffff;
+    color: black;
     text-decoration: none;
 }
 
 .table th, .table td {
+    padding: 15px;
     text-align: center;
-    padding: 10px;
-    border: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
 }
 
-.table th {
-    background-color: #007bff;
-    color: #ffffff;
+.table .row:hover {
+    background-color: #e0f7fa;
+    cursor: pointer;
 }
 
-.table tr:nth-child(even) {
-    background-color: #f2f2f2;
+.table td a {
+    color: #089e8f;
+    text-decoration: none;
+    font-weight: bold;
 }
 
-.table tr:hover {
-    background-color: #e9ecef;
-}
+.table tr:last-child td {
+    border-bottom: none;
+} 
+
 
 /* כפתור הוספה */
 .open-modal {
     display: inline-block;
     margin-top: 20px;
     padding: 10px 20px;
-    background-color: #007bff;
+    background-color:#089e8f;
     color: #ffffff;
     text-decoration: none;
     border-radius: 5px;
     font-size: 16px;
-    cursor: pointer;
+    cursor: pointer; 
 }
 
+
 .open-modal:hover {
-    background-color: #0056b3;
+    background-color: #089e8f;
 }
 
 
@@ -88,7 +244,7 @@ h4 {
 /* =========================================================== */
 
 /* עיצוב למודל הנפתח*/
-.modal {
+.modal-add {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -104,12 +260,12 @@ h4 {
 }
 
 /* הצגת המודל כאשר הוא נבחר */
-.modal:target {
+.modal-add:target {
     display: flex; /* מציג את המודל */
 }
 
 /* תוכן המודל */
-.modal-content {
+.modal-content-add {
     background-color: #ffffff;
     padding: 20px 30px;
     border-radius: 10px;
@@ -120,7 +276,7 @@ h4 {
 }
 
 /* כפתור לסגירת המודל */
-.close {
+.close-add {
     position: absolute;
     top: 10px;
     right: 15px;
@@ -131,12 +287,12 @@ h4 {
     cursor: pointer;
 }
 
-.modal-content .close:hover {
+.modal-content-add .close-add:hover {
     color: #000;
 }
 
 /* עיצוב הטופס */
-.modal-content form {
+.modal-content-add form {
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -144,7 +300,7 @@ h4 {
 }
 
 /* שדות הקלט */
-.modal-content form input {
+.modal-content-add form input {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -152,16 +308,16 @@ h4 {
     width: 100%;
 }
 
-.modal-content form input:focus {
-    border-color: #007bff;
+.modal-content-add form input:focus {
+    border-color: #089e8f;
     outline: none;
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    box-shadow: 0 0 5px rgba(8, 158, 143, 0.5);
 }
 
 /* כפתור שליחה */
-.modal-content form button {
+.modal-content-add form button {
     padding: 10px;
-    background-color: #007bff;
+    background-color: #089e8f;
     color: #ffffff;
     border: none;
     border-radius: 5px;
@@ -170,6 +326,70 @@ h4 {
 }
 
 
-.modal-content form button:hover {
-    background-color: #0056b3;
+.modal-content-add form button:hover {
+    background-color:#089e8f;
 }
+
+/* =========================================== */
+
+/* עיצוב חלון קופץ (modal) */
+.modal-date {
+    display: none; /* מוסתר כברירת מחדל */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* רקע כהה */
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+/* תוכן החלון */
+.modal-content-date {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 20%;
+    text-align: center;
+    position: relative;
+}
+
+/* כפתור סגירה */
+.modal-content-date .close-date {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #dc3545;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.modal-content-date .close-date:hover {
+    color: #a71d2a;
+}
+
+/* עיצוב התיבה */
+.modal-content-date label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+}
+
+.modal-content-date input[type="date"] {
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 90%;
+}
+
+/* הצגת התיבה כאשר היא ב-target */
+.modal-date:target {
+    display: flex;
+}
+

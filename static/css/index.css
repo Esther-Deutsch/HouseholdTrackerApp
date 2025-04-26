@@ -1,56 +1,25 @@
-/*  */
+/* #c28670 - עוד סנגון של בצע - כתום חום */
+/* #3e1212 - צבע בורדו */
+
 *{
     direction: rtl;
 }
-
-/* עיצוב כללי */
 
 body {
     font-family: Arial, sans-serif;
     background-color: #f9f9f9;
     margin: 0;
-    padding: 20px;
+    padding: 70px;
     text-align: center;
 }
 
 /* עיצוב הניווט */
-/* nav {
-    background-color: #007bff;
-    margin-top: 10px;
-    padding: 10px 20px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    position: fixed; הניווט נשאר קבוע בראש העמוד
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000; מבטיח שהניווט יישאר מעל כל האלמנטים
-} */
-
-/* nav a {
-    color: #ffffff;
-    font-size: 16px;
-    margin: 0;
-    cursor: pointer;
-    transition: color 0.3s ease;
-    text-decoration: none;
-}
-
-nav a:hover {
-    color: #ffdd57;
-} */
-
-/* ==================================== */
-
-
-
-/* עיצוב הניווט */
 nav {
-    background-color: #007bff; /* צבע כהה */
+    background-color:#089e8f; /* צבע כהה */
+    border-bottom: 2px solid  #343a40;;
     padding: 15px 30px;
     display: flex;
+    flex-direction: column;
     justify-content: space-between; /* ריווח בין האלמנטים */
     align-items: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -60,7 +29,6 @@ nav {
     width: 100%;
     z-index: 1000; /* מבטיח שהניווט יישאר מעל כל האלמנטים */
 }
-
 
 /* עיצוב הקישורים */
 nav ul {

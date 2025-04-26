@@ -8,7 +8,7 @@
     /* flex-direction: column; */
     justify-content: center;
     align-items: center;
-    height: 90vh;
+    height: 80vh;
 }
 
 form {
@@ -36,15 +36,15 @@ form input {
 }
 
 form input:focus {
-    border-color: #007bff;
+    border-color:#089e8f;
     outline: none;
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    box-shadow: 0 0 5px rgba(8, 158, 143, 0.5);
 }
 
 form button {
     width: 100%;
     padding: 10px;
-    background-color: #007bff;
+    background-color: #089e8f;
     color: #ffffff;
     border: none;
     border-radius: 5px;
@@ -53,7 +53,7 @@ form button {
 }
 
 form button:hover {
-    background-color: #0056b3;
+    background-color: #069183;
 }
 
 h3 {

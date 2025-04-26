@@ -1,0 +1,16 @@
+{% extends 'index.html' %}
+
+{% block head %}
+  <link rel="stylesheet" href="static/css/graph.css">
+  <title>graphs</title>
+{% endblock %}
+
+{% block body %}
+<div class="graph-container">
+    <h2 class="graph-title">גרף סטטיסטי</h2>
+    <div class="graph-image">
+        <img src="{{ graph_path }}" alt="גרף סטטיסטי" />
+    </div>
+    <a href="/profile" class="back-button">חזרה לפרופיל</a>
+</div>
+{% endblock %}
