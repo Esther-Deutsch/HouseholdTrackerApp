@@ -412,6 +412,10 @@ def demo():
     message = f"יש לך {len(products_name)} מוצרים ברשימת הקניות"
     return render_template('demoProfile.html', purchases=purchases, message=message)
 
+@app.route('/demoBtns', methods=["GET"])
+def demoBtsn():
+    return render_template("register.html", message="עליך להתחבר לאתר")
+
 @app.route('/products', methods=["GET"])
 def products():
     
