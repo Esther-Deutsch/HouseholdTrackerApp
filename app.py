@@ -1,5 +1,5 @@
 # בשביל שנוכל ליצור שרת flask יבוא של הספריה 
-from flask import Flask, render_template, request, redirect, send_file
+from flask import Flask, render_template, request, redirect, send_file, current_app
 # יבוא מתוך קובץ חיצוני את הדאטה בייס
 from extensions import db, login_manager, current_user, login_user, logout_user
 # יבוא ספרייה זו לשם יצירת דאטה פריים
@@ -437,7 +437,11 @@ def products():
 @app.route('/compare', methods=["GET"])
 def compare():
         
-    with open ('templates/products.html', "r") as file:
+    # בניית נתיב מוחלט לקובץ products.html
+    products_path = os.path.join(current_app.root_path, 'templates', 'products.html')
+    
+    # פתיחת הקובץ למצב של קריאה
+    with open (products_path, "r", encoding="utf-8") as file:
         content = file.read() 
 
     soup = BeautifulSoup(content, 'lxml')
