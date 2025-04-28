@@ -18,8 +18,17 @@
             <li><a href="/login">התחבר</a></li>
             <li><a href="/profile">איזור אישי</a></li>
             <li><a href="/logout">התנתק</a></li>
+            <p class="welcome">
+                👋 שלום לך,
+                {% if current_user.is_authenticated %}
+                    {{ current_user.name }}
+                {% else %}
+                    אורח
+                {% endif %}
+            </p>
         </ul>
     </nav>  
+    
     {% block body %}
     {% endblock  %}
 </body>

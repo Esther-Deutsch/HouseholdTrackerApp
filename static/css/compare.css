@@ -60,7 +60,7 @@ table td {
 }
 
 /* הודעה כאשר אין מוצרים */
-p {
+.p {
     color: #555;
     font-size: 18px;
     margin-top: 20px;

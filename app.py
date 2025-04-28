@@ -76,7 +76,7 @@ def register():
         if not name or not email or not password:
             return render_template("register.html", message = "יש למלא את כל השדות", name=name, email=email, password=password)
         # בודק אם קיים משתמש זהה
-        exist = User.query.filter_by(password=password).first()
+        exist = User.query.filter_by(email=email).first()
         
         # במקרה וקיים
         if exist:
@@ -101,7 +101,7 @@ def login():
         if not email or not password:
             return render_template("login.html", message = "יש למלא את כל השדות", email=email, password=password)
         # בודק אם קיים משתמש זהה
-        user = User.query.filter_by(password=password).first()
+        user = User.query.filter_by(email=email).first()
         
         # במקרה ולא קיים
         if not user:
@@ -277,6 +277,10 @@ def showGraph1():
 
     df = pd.DataFrame(data)
 
+    # בדיקה אם ה-DataFrame ריק
+    if df.empty:
+        return render_template("graph.html", message="אין נתונים להצגת גרף")
+
     # המרת עמודת date לפורמט datetime
     df['date'] = pd.to_datetime(df['date'])
 
@@ -327,7 +331,13 @@ def showGraph2():
         "category": purchase.category,
         "price": float(purchase.price)
     } for purchase in purchases]
+    
     df = pd.DataFrame(data)
+    
+    # בדיקה אם ה-DataFrame ריק
+    if df.empty:
+        return render_template("graph.html", message="אין נתונים להצגת גרף")
+
     
     # חישוב סך ההוצאות לפי קטגוריות
     category_expenses = df.groupby('category')['price'].sum()
@@ -372,7 +382,6 @@ def demo():
         "חולצה": "ביגוד",
         "נעליים": "הנעלה",
     }
-
     # מערך אפסים - id
     array_of_zeros = np.zeros(len(product_data), dtype=int)
     # מערך של מוצרים

@@ -7,10 +7,15 @@
 
 {% block body %}
 <div class="graph-container">
+    
+    {% if message %}
+        <h3>{{ message }}</h3>
+    {% else %}
     <h2 class="graph-title">גרף סטטיסטי</h2>
     <div class="graph-image">
         <img src="{{ graph_path }}" alt="גרף סטטיסטי" />
     </div>
+    {% endif %}
     <a href="/profile" class="back-button">חזרה לפרופיל</a>
 </div>
 {% endblock %}
